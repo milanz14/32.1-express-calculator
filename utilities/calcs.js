@@ -6,6 +6,7 @@ const counter = (arr) => {
 };
 
 const mode = (arr) => {
+    if (arr.length === 0) return 0;
     let freqCounter = counter(arr);
     let count = 0;
     let modeNumber;
@@ -16,7 +17,7 @@ const mode = (arr) => {
             count = freqCounter[key];
         }
     }
-    return modeNumber;
+    return +modeNumber;
 };
 
 const arrayIze = (str) => {
@@ -44,6 +45,7 @@ const mean = (nums) => {
 
 const median = (nums) => {
     // value in the middle of the data set
+    if (nums.length === 0) return 0;
     nums.sort((a, b) => a - b);
     let middle = Math.floor(nums.length / 2);
     let median;
